@@ -1,0 +1,295 @@
+<html>
+<head>
+    
+    <link href="bootstrap.css" rel="stylesheet">
+    <link rel="stylesheet" href="jquery2.css">
+    <script src="bootstrap.min.js"></script>
+    <script src="jquery.js"></script>
+
+</head>
+<body>
+    <h3>stop()</h3>
+    <input type="button" id="run" value="run">
+    
+    <div id="stop">
+    Click to stop
+    </div>
+    <div id="box">
+        Test Test Test Test <br/>
+        Test Test Test Test <br/>
+        Test Test Test Test <br/>
+    </div>
+    
+    <script>
+    $(function(){
+       $('#run').click(function(){
+          $('#box').slideDown(5000); 
+       });
+        
+        $('#stop').click(function(){
+           $('#box').stop(); 
+        });
+    });
+    </script>
+    
+    <h3>Get Content - text(), html(), and val()</h3>
+    <input id="btext" type="button" value="show Text">
+    <input id="bhtml" type="button" value="show HTML">
+     <p id="text">This is some <b>bold</b> text in a paragraph.</p>
+    
+    <!-- somehow this doesn't work with input buttons-->
+    <button id="button">show Value</button>
+<p>Name: <input type="text" id="test" value=""></p>
+
+    <a href="https://www.w3schools.com" id="w3s">w3schools</a>
+ <script>
+     //alert this text
+    $(function(){
+             //alert #text text
+       $('#btext').click(function(){
+           alert("text: " + $("#text").text());
+       })
+            //alert #text html
+        $('#bhtml').click(function(){
+        alert("html: " + $('#text').html());   
+        });
+            //alert #test value
+       $('#button').click(function(){
+        alert("value: " + $('#test').val());
+        });
+            //alert this attribute of href
+        $('#w3s').click(function(){
+           alert($(this).attr('href')); 
+        });
+        
+        
+    });
+    </script>
+    
+    
+    <h3>Set content</h3>
+    <button id="button2">show old/new text</button>
+    <div id="test2"></div>
+    <div id="test22"></div>
+    <p id="test2p"><b>This is bold text</b></p>
+    <p id="test22p"><b>This is bold text</b></p>
+    
+    <a id="test222" href="https://www.w3schools.com">W3SCHOOLS</a>
+    <div>
+    <a id="test2222" href="https://www.w3schools.com">W3SCHOOLS</a>
+    </div>
+    
+    <script>
+    $(function(){
+       
+      $('#button2').click(function(){   
+         $('#test2').text('i created this <b>text</b>');
+         $('#test22').html('i created this <b>text</b>');
+       
+      });
+         
+       $('#button2').click(function(){
+           //set text
+          $('#test2p').text(function(i, origText){
+             return "This is the new text. " + "<b>original text:</b> " + origText +  " (" + i + ")"; 
+          }); 
+       });
+              
+            $('#button2').click(function(){
+            //set text and apply html element
+           $('#test22p').html(function(i, origText){
+             return "This is new html <i>text</i></br>" + "Original text: " + origText + "(" + i + ")";
+           }); 
+        });   
+        
+         
+        $('#button2').click(function(){
+            $('#test222').attr('href', "https://the-free-encyclopedia001.000webhostapp.com");
+        });   
+               //The attr() method also allows you to set multiple attributes at the same time.
+               //if.. #test222 attribute href and title will change
+        $('#button2').click(function(){
+           $('#test222').attr({
+               'href' : "https://the-free-encyclopedia001.000webhostapp.com",
+               'title' : "my website"
+           }); 
+        });
+        
+    });
+    </script>
+    
+    
+    <h3>add elements</h3>
+    
+    <button id="btn3">Append text</button>
+    <button id="btn33">Append list items</button>
+    <br/>
+    <button id="btn333">prepend text</button>
+    <button id="btn3333">prepend list item</button>
+    
+    <p id="atext">This is a text.</p>
+    <menu id="l-items">
+    <li>This is a text.</li>
+    <li>This is a text.</li>
+    <li>This is a text.</li>     
+    </menu>
+    
+    <script>
+    $(function(){
+        
+        
+        //prepend
+        $('#btn333').click(function(){
+           $('#atext').prepend('prepend text'); 
+        });
+        
+        $('#btn3333').click(function(){
+           $('#l-items').prepend('<li>prepend list item</li>'); 
+        });
+        
+        //append
+       $('#btn3').click(function(){
+          $('#atext').append('<i> appended text<i>');
+       }); 
+        
+        $('#btn33').click(function(){
+           $('#l-items').append('<li> appended list item</li>'); 
+        }); 
+    });
+    </script>
+    
+<p>This is a paragraph.</p>
+<button onclick="afterText()">Append text</button>
+
+    
+   <script>
+function afterText() {
+    var txt1 = "<b>I </b>";                   // Create element with HTML
+    var txt2 = $("<i></i>").text("love ");    // Create with jQuery
+    var txt3 = document.createElement("b");   // Create with DOM
+    txt3.innerHTML = "jQuery!";
+    //append/prepend/before/after
+    $("#l-items").append(txt1, txt2, txt3);      // Insert new elements after list items
+}
+</script>
+    <div id="s4">
+       <h1>Simple Text</h1>
+    </div>
+     <button id="btn4">Before/after</button>
+     <script>
+         $(function(){
+    $('#btn4').click(function(){
+       $('#s4 > h1').before('<b>before</b>'); 
+       $('#s4 > h1').after('<i>After</i>'); 
+       });
+    });
+    </script>
+    
+    <h3>remove/empty</h3>
+    
+    <div id="div-re" style="width: 100px; height: 100px; background-color:  yellow">
+        Content of div Content of div Content of div Content of div Content of div
+    </div>
+   
+    <!--or you could filter what to remove/empty-->
+    <button id="btn5">empty</button>
+    <button id="btn55">remove</button>
+    <script>
+    $(function(){
+       $('#btn5').click(function(){
+         $('#div-re').empty();  
+       });
+        
+       $('#btn55').click(function(){
+          $('#div-re').remove(); 
+       });
+    });
+    </script>
+    
+    <h3>Dimensions</h3>
+    <div id="div-d" style="width: 250px; height: 100px; background-color: lightblue; border 1px solid blue">
+    </div>
+    <button id="btn6">click</button>
+    <script>
+    $(function(){
+       $('#btn6').click(function(){
+           
+          var txt = "";
+          
+          txt += "Height: " + $('#div-d').height(200) + "width: " + $('#div-d').width(300) + "</br>";
+          txt += "outerHeight: " + $('#div-d').outerHeight(true) + "outerwidth: " + $('#div-d').outerWidth(true);
+           
+           $('#div-d').html(txt);
+           
+       }); 
+    });
+    </script>
+    
+    <h3>parent/parentUntil</h3>   
+    <div id="ancestor">div (great-grandparent)
+    <ul>ul (grandparent)  
+      <li>li (direct parent)
+        <div id="child">div (child)</div>
+      </li>
+    </ul>   
+  </div>
+    
+ <script>
+     $(function(){
+       $("#child").parent().css({"background-color": "red", "border": "2px solid red"});
+     });
+ </script>
+    <br/>
+    
+    <div id="ancestor2"> div(great-grandparent)
+        <ul> ul (grandparent)
+           <li> li(grandparent)
+               <div id="child2">div (child)</div>
+            </li>
+        </ul>
+    </div>
+    
+    <script>
+    $(function(){
+       $("#child2").parentsUntil("#ancestor2").css({"background-color": "red", "border": "2px solid red"});
+    });
+    </script>
+    
+    <h3>Textbox</h3>
+    <textarea class="form-control" placeholder="write something..">
+    
+    </textarea>
+    <input id="btn-tarea" type="button" value="click">
+    
+    <script>
+    $(function(){
+       $("#btn-tarea").click(function(){
+         
+           var txt= "";
+           txt += "User: " + $("textarea").val();
+           
+           $("div > h1").html(txt);
+       }); 
+    });
+    </script>
+    <hr/>
+    <h3>descendants</h3>
+    
+    <div id="descendants"> div(great-grandparent)
+        <ul> ul (grandparent)
+           <li> li(grandparent)
+               <div id="child2">div (child)</div>
+            </li>
+        </ul>
+    </div>
+    <script>
+    $(function(){
+        $('#descendants > ul').children().css('color','red');
+        $('#descendants').find('div').css('color','green');
+    });
+    </script>
+    
+    <h3>siblings</h3>
+    
+    </body>
+</html>

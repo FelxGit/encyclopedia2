@@ -1,0 +1,15 @@
+      #stop, #box {background-color: black;width: 20%; color: white; border-radius: 5px; border: thin solid  gray; text-align: center; font-size: 18px;}
+        #box {display: none}
+        #text {display: none}
+        #ancestor {width: 300px}
+        #ancestor * {border: 1px solid lightgray; padding: 10px; margin: 15px}
+        
+        #ancestor2 {width: 300px}
+        #ancestor2 * {border: 1px solid lightgray; padding: 10px; margin: 15px}
+
+     /*textarea*/
+.form-control {color: gray!important}
+.form-control:focus {border: thin solid red!important;
+               /*offset width glow*/
+                box-shadow: 0px 0px 20px red !important}
+                

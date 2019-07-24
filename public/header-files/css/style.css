@@ -1,0 +1,87 @@
+html{}
+body {font-family: sans-serif}
+header {font-family: Bradley Hand ITC, Ink free,raleway; background-color:  #D5DBDB}
+nav{}
+.navbar-default {background-color: gray!important; font-family: sans-serif!important}
+.navbar-nav .active a {background-color: dimgray!important}
+.navbar a {color: #e0e0e0!important; transition: color 0.5s linear 0s; }
+.navbar a:hover {color: white!important; background-color: dimgray!important}
+.navbar .dropdown.open a {background-color: dimgray!important}
+.navbar .dropdown-menu {background-color: dimgray!important}
+
+.navbar-nav .dropdown-menu a:hover {background-color: gold!important}
+main{padding: 5px}
+#car-collapse {text-align: center;text-decoration: none!important}
+/*subtitute */
+#car-colsub {text-align: center}
+#car-colsub a {text-decoration: none!important}
+
+#myCarousel{ width: 100%; font-size:; line-height:; z-index: 1!important; margin: 0!important}
+.affix {top: 0px; right: 20px; z-index: 999!important;color: gray}
+
+/*collapse transition*/
+#car-col.collapse[aria-expanded="false"] {
+    display: block;
+    height: 10% !important;
+    overflow: hidden;
+}
+
+#car-col.collapsing[aria-expanded="false"] {
+    height: 40px !important;
+}
+
+/*vanilla collapse*/
+
+#car-collapse a.collapsed:before  {
+    content: '+ Show More ';
+}
+
+#car-collapse a:not(.collapsed):before {
+    content: '- Show Less ';
+}
+
+/*collapse breakpoint*/
+@media (max-width: 900px){
+    .navbar-collapse.collapse {
+        display: none !important;
+    }
+    .navbar-collapse.collapse.in {
+        display: block !important;
+    }
+    .navbar-header .collapse, .navbar-toggle {
+        display:block !important;
+    }
+    .navbar-header {
+        float:none;
+    }
+
+}
+
+/* remove carousel && header at */
+@media (max-width: 480px){
+    header {display: none}
+    #isolate {display:none}
+
+}
+
+@media (max-width: 765px){
+    #content {text-align: center}
+    .navbar a span {display: none}
+    .navbar .active a {background-color: dimgray!important}
+    main font {font-size: 18px; text-align: center}
+}
+
+footer {margin-top: 200px}
+
+/*remove underline on a */
+footer a{text-decoration: none!important}
+
+footer .table {font-size: calc(18px + 0.5vw)}
+
+/*remove border/stripe set on td&&th*/
+  footer .table td, footer .table th {
+     border: none !important;
+}
+/*resize the width of table//
+footer .table{width: 50%!important}
+*/

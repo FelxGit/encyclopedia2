@@ -1,0 +1,368 @@
+<htmL>
+<head>
+<style type="text/css">
+body {margin: 0px 250px;
+      }
+#maindiv {background: lightgray;
+          text-align: center;
+		  }
+table  {border-spacing: 50px;
+       }
+.1st_cell_visibility {visibility: hidden;}
+
+td {height: 100px;
+    width: 100px;
+    }
+	
+.1st_cell_visibility {visibility: hidden;}	
+.1st_cell_visibility > h4 {background: darkblue;
+    }
+#gg1 {background: blue;
+      text-align: center;
+      
+	  }
+#gg2 {background: blue;
+      text-align: center;
+      }
+#gg3 {background: blue;
+      text-align: center;
+      }
+#gg4 {background: blue;
+      text-align: center;
+      }	  
+	  
+.special {background: red;
+		  }
+header {border}
+
+menu {list-style: circle;}
+
+#enterleave > h2{display: inline-block;}
+
+#animate > h4 {position: relative;}
+	  </style>
+</head>	 
+	 <body>
+<main>
+<header>	 
+<div id="maindiv">
+         <h1>DRY RULE</h1>
+     <button id="btn1">#btn1</button>
+	 <button id="btn2">#btn2</button>
+	 <button id="btn3">#btn3</button>
+	 <button id="btn4">#btn4</button>
+</div>
+</header>
+<h3><var>If I click #btn1, give me a function that #gg1 will be toggled(show).</var></h3>
+<div>
+<table align="center" id="t1">
+<tr> <td id="1st_cell_visibility">
+<div class="1st_cell_visibility">
+<h4>#btn1</h4>
+<p>This is the first cell</p>
+</div>
+     </td>
+ <td>
+<div id="gg2">
+<h4>#btn2</h4>
+<p>This is the second cell</p>
+</div>
+     </td>
+      <td class="special">
+	  <div id="gg3">
+<h4>#btn3</h4>
+<p>This is the third cell</p>
+</div>
+	  </td>
+	  <td>
+	  <div id="gg4">
+<h4>#btn4</h4>
+<p>And this is the fourth cell.</p>
+</div>
+	  </td>
+</tr>
+</table><br/>
+</div>
+<h3>Selectors</h3>
+<menu>
+       <li>fadeIn</li>
+	   <li>fadeOut</li>
+	   <li>fadeToggle</li>
+	   <li>slideUp</li>
+	   <li>slideDown</li>
+	   <li>slideToggle</li>
+	   <li>toggle</li>
+	   <li>fadeTo</li>
+	   <li>delay</li>
+	   <li>show</li>
+	   <li>hide</li>
+	   <li>css</li>
+	   <li>html</li>
+</menu>
+<h5>or I can do.<br/>
+$('td').on('click', function() {<br/>
+$(this).<u><font color="blue">.find/.next/.siblings/.parent/.closest/filter('<sub>class/id</sub>')</font></u><u>.<font color="blue">remove/.hide/.addClass(<font color="red">'special'</font>)</font></u>;
+<br/>})</h5>
+<br/>
+<p><br/>
+CSS method:<br/>
+.css({"background": "blue",<br/>
+      "font-size": "red",<br/>
+	  })</p>
+	  <br/>
+<h1>Click me</h1>
+<p id="hidden">this is a test.</p>
+<br/>
+<input id="allelements" type="button" value="*(all elements)" /><br/><br/>
+<input id="fchild" type="button" value="Children" />
+<input id="descendants" type="button" value="Descendants" /> 
+<ul>
+<li><u>This</u> is a text.</li>
+<li>This <strong>is</strong> a text.</u></li>
+<li>This is <i>a</i> text.</u></li>
+<li>This is a <sup>text</sup>.</li> 
+</ul>
+<br/><br/>
+<input id="odd" type="button" value="odd" />
+<input id="even" type="button" value="even" /> 
+<br/>
+<ol>
+<li>This is a sample.</li>
+<li>This is a sample.</li>
+<li>This is a sample.</li>
+<li>This is a sample.</li>
+</ol>
+<br/>
+
+<H3><font color="blue">Mouseup/Mousedown</font></h3>
+<div id="updown">
+                  <h2>This is a sample.</h2>
+				  <h2>This is a sample.</h2>
+</div>
+<br/>
+
+
+<h3><font color="blue">Mouseenter/Mouseleave</font></h3>
+<div id="enterleave">
+
+                  <h2>This is a sample.</h2>
+				  <h2>This is a sample.</h2>
+</div>
+
+
+<input type="button" value="test" id="highlight" />
+<br/>
+
+<div id="sampleopacity">
+                        <h2><font color="blue">Opacity in jquery</font></h2>
+						<h3>This is a sample.</h3>
+</div>
+<br/>
+
+<h3><font color="blue">Unbind/disable all events/disable specific event</font></h3>
+           <div id="unbind"> 
+	<h5>This is a sample.</h5>
+	<h4>This is a sample.</h4>
+	<h3>This is a sample.</h3>
+		   </div>
+<br/>
+
+<h2><font color="blue">Bring along a function.</font></h2>
+                  <div id="trigger">
+<h2>Click Me</h2>
+<h3>Hide Me</h3>
+	<h4>Bring Me</h4>
+	              </div>
+				          <br/>
+                  
+    <h2><font color="blue">Animate objects</font></h2>	
+                 
+<div id="animate">	
+                  <h2>Click Me</h2>
+                  <h4>Animate Me</h4>
+                  <h3>Normal text.</h3>				  
+</div>
+<br/>
+
+<h2><font color="blue">Using Selectors to animate.</font></h2>
+<div id="ani_selector">
+                  <h2>Click Me</h2>
+                  <h4>Animate Me</h4>
+                  <h3>Normal Text</h3>
+</div>
+
+
+</main>
+
+<script src="jquery.js"></script>
+<script>
+
+$(function(){
+//use the standard script
+//border + border = stick to each other
+//div + div = sticks and will be related.
+
+//remember: the tds didn't move because you only remove the divs inside which your elements are in. 
+//If I click #btn1, give me a function that #gg1 will be toggled(show/hide).
+
+
+
+$('#btn1').click(function(){
+$('.1st_cell_visibility').toggle();
+});
+
+$('#btn2').on('click', function(){
+$('#gg2').toggle();
+})
+
+$('#btn3').on('click', function(){
+$('#gg3').toggle();
+})
+
+$('#btn4').on('click', function(){
+$('#gg4').toggle();
+})
+//If I click td, give me a function that this siblings of td will be added a class special.
+$('td').on('click', function(){
+$(this).siblings().addClass('special');
+});
+
+//first, I hide the #hidden(p)  element.
+$('#hidden').hide();
+//second, If I click h1, give me a function that the #hidden(p) element will be toggled.
+$('h1').on('click', function(){
+$('#hidden').slideToggle().addClass('special');
+});
+//third, If I click #hidden(p element), give me a function that will toggle the h1.
+$('#hidden').click(function(){
+$('h1').slideToggle();
+});
+
+
+//all elements should have a bg of red.
+$('#allelements').click(function(){
+$('*').css('background', 'darkred');
+})
+//Method 1: so if I click #fchild give me a function that the ul childrens(li) will have a background of red. 
+//to specify the children inside the tag use 'first-child' or 'last-child'.
+
+$('#fchild').click(function(){
+$('ul > li:first-child').css('background', 'red');                              
+});
+//says that if I click button #descendants, give me a function that ul descendants will have a background of blue and have a font-size of 20px. 
+$('#descendants').click(function(){
+$('ul u,strong,i,sup').css('background', 'blue').css('font-size', '20px');
+});
+
+//If I click button #even, give me a function that ol childrens will have a category of even.
+$('#even').click(function(){
+$('ol > li:even').css('background', 'yellow').css('display','inline-block');
+});
+//If I click button #odd, give me a function that ol childrens will have a category of odd.
+$('#odd').click(function(){
+$('ol > li:odd').css('background', 'orange').css('display', 'inline-block');
+});
+
+
+////if I mousedown or click #updown's h2, give me a function that this will have a background of blue.
+$('#updown > h2').mousedown(function(){
+$(this).css('background', 'blue');
+});
+
+//if I mouseup or let go #updown's h2, give me a function that this h2 will have a background of red. 
+$('#updown > h2').mouseup(function(){
+$(this).css('background', 'red');
+});
+
+
+//the #enterleave's h2 will have a background of orange. 
+$('#enterleave > h2').css('background', 'orange');
+
+//If I enter my mouse on #enterleave's h2, give me a function that this will have a bg of yellow.
+$('#enterleave > h2').mouseenter(function(){
+$(this).css('background', 'yellow');
+});
+
+//If I leave or take my mouse on #enterleave's h2, give me a function that h2 will go back to orange.
+$('#enterleave > h2').mouseleave(function(){
+$(this).css('background', 'orange');
+});
+
+$('#highlight').mousedown(function(){
+$(this).css('background', 'gray')
+});
+
+$('#highlight').mouseup(function(){
+$(this).css('background', 'lightgray')
+});
+
+$('#sampleopacity > h2').click(function(){
+$('#sampleopacity > h3').fadeTo(1000, 0.3)
+});
+
+//If I leave my mouse on #unbind's h5, give me a function that this will have a bg of yellow.
+//However, since this is also set to unbind, this will disable events. or mouseenter and mouseleave simply does not work. 
+$('#unbind > h5').mouseleave(function(){
+$(this).css('background','yellow');
+$(this).unbind();
+});
+//If my mouse leave out #unbind's h4, give me a function that this will have a bg of yellow and all elements will be unbind/disable.
+$('#unbind > h4').mouseleave(function(){
+$(this).css('background','yellow');
+$('*').unbind();
+});
+//If my mouse leave out #unbind's h3, give me a function that this will have a bg of yellow. after this, all mouseleave events
+//will be unbind/disable.
+$('#unbind > h3').mouseleave(function(){
+$(this).css('background','yellow');
+$('*').unbind('mouseleave')
+});
+
+//If I click #trigger's h2, give me a function that #trigger's h3 will hide in 1000 milisecs with another function
+// along with it that #trigger's h4 will fadeOut. 
+$('#trigger > h2').click(function(){
+$('#trigger > h3').hide(1000, function(){
+$('#trigger > h4').fadeOut();
+       });
+   });
+//If I click #animate h2, give me a function that #animate h4 will have a bg of yellow and an animate to 1000 mili seconds.
+// 'left': '+=120px' means everytime I click #animate's h2, #animate's h4 will move away from left by 120pixels every click you make.
+// also -= is applicable and means move backward. 
+//plus using a selector is also applicable in this matter. 
+//careful of using "," and not semi colon.
+$('#animate > h2').click(function(){
+$('#animate > h4').css('background','yellow').animate({
+  'font-size': '3em',
+  'width': '50%',
+  'padding-left': '120px',
+  'left': '+=120px',
+    },1000)
+
+});   
+
+//If I click #ani_selector's h2, give me a function  that #ani_selector's h4 will have a background of yellow and an animate by applying selector for a
+//duration of 1 second(1000milisec)
+//and another function that fade Out #ani_selector h3.
+$('#ani_selector > h2').click(function(){
+$('#ani_selector > h4').css('background','yellow').animate({
+  'font-size': '0.2in',
+  'width': 'toggle',
+  'padding-left': '120px',  
+       },1000, function(){
+          $('#ani_selector > h3').fadeOut(1000)   
+	   });
+    });
+	
+	
+	
+	
+	
+	
+	
+	
+});
+
+
+</script>
+</body>
+</html>
